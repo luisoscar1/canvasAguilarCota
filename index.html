@@ -9,17 +9,25 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="550" height="550"></canvas>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
     <SCRipt type="text/javascript">
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
         ctx.fillStyle = "green";
-        ctx.fillRect(20,20,100,100)
+        ctx.fillRect(20, 20, 100, 100)
         ctx.fillStyle = "blue";
-        ctx.fillRect(100,100,100,100)
+        ctx.fillRect(100, 100, 100, 100)
         ctx.fillStyle = "red";
-        ctx.fillRect(180,180,100,100)
+        ctx.fillRect(180, 180, 100, 100)
 
+
+        ctx.beginPath();
+        
+        ctx.moveTo(300, 300);
+        ctx.lineTo(300, 100); 
+        ctx.lineTo(200, 100); 
+        ctx.closePath();
+        ctx.stroke();
     </SCRipt>
 
 
