@@ -55,8 +55,8 @@
         var img = new Image()
         img.src = "m.png";
 
-        img.onload = function() {
-            ctx.drawImage(img, 400, 200, 200,200);
+        img.onload = function () {
+            ctx.drawImage(img, 400, 200, 200, 200);
         };
 
 
@@ -73,6 +73,14 @@
 
         ctx.fillStyle = grd2;
         ctx.fillRect(200, 100, 150, 100);
+
+
+        const grd3 = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd3.addColorStop(0, "red");
+        grd3.addColorStop(1, "white");
+
+        ctx.fillStyle = grd3;
+        ctx.fillRect(10, 10, 150, 100);
     </SCRipt>
 
 
