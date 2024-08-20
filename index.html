@@ -52,10 +52,20 @@
         ctx.strokeText("Hola mundo!", 300, 50);
 
 
+        var img = new Image()
+        img.src = "m.png";
+
+        ctx.drawImage(img, 400, 200);
 
 
 
+        const grd = ctx.createLinearGradient(500, 350, 200, 500);
+        grd.addColorStop(0, "blue");
+        grd.addColorStop(1, "red");
+        ctx.fillStyle = grd;
+        ctx.fillRect(400, 400, 200, 100)
 
+        //"#32dc65"
     </SCRipt>
 
 
