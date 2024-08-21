@@ -9,19 +9,46 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
     <SCRipt type="text/javascript">
-        
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+
+            }
+            return color;
+        }
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
+
+
+        document.getElementById("myCanvas").addEventListener("mouseover", (e) => {
+
+
+            ctx.beginPath();
+            ctx.fillStyle = getRandomColor();
+
+            ctx.strokeStyle = getRandomColor();
+
+            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fill();
+        })
+
 
         document.getElementById("myCanvas").addEventListener("mousedown", (e) => {
 
 
             ctx.beginPath();
-            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
-            ctx.fill();
+            ctx.fillStyle = getRandomColor();
 
+            ctx.strokeStyle = getRandomColor();
+
+            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fill();
         })
 
 
