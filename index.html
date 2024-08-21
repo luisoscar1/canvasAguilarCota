@@ -11,76 +11,90 @@
 <body>
     <canvas id="myCanvas" width="1000" height="1000"></canvas>
     <SCRipt type="text/javascript">
+        
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
-        ctx.fillStyle = "green";
-        ctx.fillRect(20, 20, 100, 100)
-        ctx.fillStyle = "blue";
-        ctx.fillRect(100, 100, 100, 100)
-        ctx.fillStyle = "red";
-        ctx.fillRect(180, 180, 100, 100)
+
+        document.getElementById("myCanvas").addEventListener("mousedown", (e) => {
 
 
-        ctx.beginPath();
+            ctx.beginPath();
+            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
+            ctx.fill();
 
-        ctx.moveTo(300, 300);
-        ctx.lineTo(300, 100);
-        ctx.lineTo(200, 100);
-        ctx.closePath();
-        ctx.stroke();
+        })
 
 
-        ctx.strokeStyle = "#32dc65"
-        ctx.beginPath();
-        ctx.arc(100, 375, 50, 0, 2 * Math.PI);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(200, 375, 50, 0, 2 * Math.PI);
-        ctx.fill();
-
-        ctx.strokeStyle = "#32dc65"
-        ctx.beginPath();
-        ctx.arc(100, 355, 50, 0.9, 0.7 * Math.PI);
-        ctx.fill();
-
-
-        ctx.font = "30px Georgia";
-        ctx.fillText("Hola mundo!", 300, 50);
-
-        ctx.font = "30px Georgia";
-        ctx.strokeText("Hola mundo!", 300, 50);
-
-
-        var img = new Image()
-        img.src = "m.png";
-
-        img.onload = function () {
-            ctx.drawImage(img, 400, 200, 200, 200);
-        };
-
-
-        const grd = ctx.createLinearGradient(500, 350, 200, 500);
-        grd.addColorStop(0, "blue");
-        grd.addColorStop(1, "red");
-        ctx.fillStyle = grd;
-        ctx.fillRect(400, 400, 200, 100)
-
-
-        const grd2 = ctx.createRadialGradient(205, 150, 5, 190, 160, 200);
-        grd2.addColorStop(0, "blue");
-        grd2.addColorStop(1, "white");
-
-        ctx.fillStyle = grd2;
-        ctx.fillRect(200, 100, 150, 100);
-
-
-        const grd3 = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-        grd3.addColorStop(0, "red");
-        grd3.addColorStop(1, "white");
-
-        ctx.fillStyle = grd3;
-        ctx.fillRect(10, 10, 150, 100);
+        /*      const canvas = document.getElementById("myCanvas");>
+             const ctx = canvas.getContext("2d");
+             ctx.fillStyle = "green";
+             ctx.fillRect(20, 20, 100, 100)
+             ctx.fillStyle = "blue";
+             ctx.fillRect(100, 100, 100, 100)
+             ctx.fillStyle = "red";
+             ctx.fillRect(180, 180, 100, 100)
+     
+     
+             ctx.beginPath();
+     
+             ctx.moveTo(300, 300);
+             ctx.lineTo(300, 100);
+             ctx.lineTo(200, 100);
+             ctx.closePath();
+             ctx.stroke();
+     
+     
+             ctx.strokeStyle = "#32dc65"
+             ctx.beginPath();
+             ctx.arc(100, 375, 50, 0, 2 * Math.PI);
+             ctx.stroke();
+     
+             ctx.beginPath();
+             ctx.arc(200, 375, 50, 0, 2 * Math.PI);
+             ctx.fill();
+     
+             ctx.strokeStyle = "#32dc65"
+             ctx.beginPath();
+             ctx.arc(100, 355, 50, 0.9, 0.7 * Math.PI);
+             ctx.fill();
+     
+     
+             ctx.font = "30px Georgia";
+             ctx.fillText("Hola mundo!", 300, 50);
+     
+             ctx.font = "30px Georgia";
+             ctx.strokeText("Hola mundo!", 300, 50);
+     
+     
+             var img = new Image()
+             img.src = "m.png";
+     
+             img.onload = function () {
+                 ctx.drawImage(img, 400, 200, 200, 200);
+             };
+     
+     
+             const grd = ctx.createLinearGradient(500, 350, 200, 500);
+             grd.addColorStop(0, "blue");
+             grd.addColorStop(1, "red");
+             ctx.fillStyle = grd;
+             ctx.fillRect(400, 400, 200, 100)
+     
+     
+             const grd2 = ctx.createRadialGradient(205, 150, 5, 190, 160, 200);
+             grd2.addColorStop(0, "blue");
+             grd2.addColorStop(1, "white");
+     
+             ctx.fillStyle = grd2;
+             ctx.fillRect(200, 100, 150, 100);
+     
+     
+             const grd3 = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+             grd3.addColorStop(0, "red");
+             grd3.addColorStop(1, "white");
+     
+             ctx.fillStyle = grd3;
+             ctx.fillRect(10, 10, 150, 100); */
     </SCRipt>
 
 
