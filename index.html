@@ -11,6 +11,8 @@
 <body>
     <canvas id="myCanvas" width="500" height="500"></canvas>
     <SCRipt type="text/javascript">
+
+        let figura = 1;
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
             var color = '#';
@@ -23,34 +25,45 @@
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
 
-
-        document.getElementById("myCanvas").addEventListener("mouseover", (e) => {
-
-
-            ctx.beginPath();
-            ctx.fillStyle = getRandomColor();
-
-            ctx.strokeStyle = getRandomColor();
-
-            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
-            ctx.stroke();
-            ctx.fill();
-        })
-
+        /* 
+                document.getElementById("myCanvas").addEventListener("mouseover", (e) => {
+        
+        
+                    ctx.beginPath();
+                    ctx.fillStyle = getRandomColor();
+        
+                    ctx.strokeStyle = getRandomColor();
+        
+                    ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
+                    ctx.stroke();
+                    ctx.fill();
+                })
+         */
 
         document.getElementById("myCanvas").addEventListener("mousedown", (e) => {
 
 
             ctx.beginPath();
             ctx.fillStyle = getRandomColor();
-
             ctx.strokeStyle = getRandomColor();
+            if (figura == 1) {
+                ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
+            } else if (figura == 2) {
+                ctx.fillRect(e.x-50, e.y-50, 100, 100)
+            }
 
-            ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
+
             ctx.stroke();
             ctx.fill();
         })
 
+        document.getElementById("myCanvas").addEventListener("mouseout", (e) => {
+            if(figura==1){
+                figura=2;
+            }else if(figura==2){
+                figura=1;
+            }
+        }) 
 
         /*      const canvas = document.getElementById("myCanvas");>
              const ctx = canvas.getContext("2d");
