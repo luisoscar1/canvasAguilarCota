@@ -25,6 +25,7 @@
                 drawLine(ctx, x, y, e.offsetX, e.offsetY);
                 x = e.offsetX;
                 y = e.offsetY;
+                
             }
 
         });
@@ -33,17 +34,7 @@
             x = e.offsetX;
             y = e.offsetY;
             isDrawing = true;
-        });
-
-        canvas.addEventListener("mouseup", (e) => {
-            if (isDrawing) {
-                drawLine(ctx, x, y, e.offsetX, e.offsetY);
-                x = 0;
-                y = 0;
-                isDrawing = false;
-
-                ctx.beginPath();
-                ctx.fillStyle = getRandomColor();
+            ctx.fillStyle = getRandomColor();
                 ctx.strokeStyle = getRandomColor();
 
                 if (figura == 1) {
@@ -54,10 +45,21 @@
 
                 ctx.stroke();
                 ctx.fill();
+        });
+
+        canvas.addEventListener("mouseup", (e) => {
+            if (isDrawing) {
+                drawLine(ctx, x, y, e.offsetX, e.offsetY);
+                x = 0;
+                y = 0;
+                isDrawing = false;
+
+                
             }
         });
 
         canvas.addEventListener("mouseout", (e) => {
+            ctx.beginPath();
             if (figura == 1) {
                 figura = 2;
             } else if (figura == 2) {
