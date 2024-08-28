@@ -16,6 +16,7 @@
 
         var super_X = 100;
         var super_y = 100;
+        var direccion = '';
 
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
@@ -32,48 +33,77 @@
 
             if (event.key.startsWith("Arrow")) {
                 event.preventDefault();
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 switch (event.key) {
                     case "ArrowUp":
-                        console.log(event)
-                        super_y -= 10;
+                        direccion='up';
                         break;
                     case "ArrowDown":
-                        super_y += 10;
+                    direccion='down';
                         break;
                     case "ArrowLeft":
-                        super_X -= 10;
+                    direccion='left';
+
                         break;
                     case "ArrowRight":
-                        super_X += 10;
+                    direccion='right';
+
                         break;
 
                 }
-                if (super_X > canvas.width) {
-                    super_X = 0;
-                } else if (super_X < 0) {
-                    super_X = canvas.width - 30; 
-                }
 
-                if (super_y > canvas.height) {
-                    super_y = 0;
-                } else if (super_y < 0) {
-                    super_y = canvas.height - 30; 
-                }
 
             }
+
+            //pintar();
+        })
+
+
+
+        function movimiento() {
+            switch (direccion) {
+                case 'up':
+                super_y -= 10;
+                    break;
+                case 'down':
+                super_y += 10;
+
+                    break;
+                case 'right':
+                super_X += 10;
+
+                    break;
+                case 'left':
+                super_X -= 10;
+
+                    break;
+
+            }
+            if (super_X > canvas.width) {
+                super_X = 0;
+            } else if (super_X < 0) {
+                super_X = canvas.width - 30;
+            }
+
+            if (super_y > canvas.height) {
+                super_y = 0;
+            } else if (super_y < 0) {
+                super_y = canvas.height - 30;
+            }
+        }
+
+        function pintar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = getRandomColor();
             ctx.strokeStyle = getRandomColor();
             ctx.fillRect(super_X, super_y, 30, 30);
             ctx.strokeRect(super_X, super_y, 30, 30)
             ctx.stroke();
             ctx.fill();
-
-        })
-
-
-
+            movimiento()
+            requestAnimationFrame(pintar);
+        }
+        requestAnimationFrame(pintar);
 
 
 
