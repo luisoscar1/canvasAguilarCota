@@ -13,20 +13,106 @@
     <SCRipt type="text/javascript">
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
-        const x = 400;
-        const y = 180;
-        const radius = 50;
-        /* ctx.fillStyle = "green";
-        ctx.fillRect(20, 20, 100, 100)
-        ctx.fillStyle = "blue";
-        ctx.fillRect(100, 100, 100, 100)
-        ctx.fillStyle = "red";
-        ctx.fillRect(180, 180, 100, 100)
-        ctx.fillStyle = "black";
-        ctx.fillRect(280, 180, 100, 100) */
-
+        const x = 600;
+        const y = 390;
+        const radius = 40;
         
+
+        ctx.fillStyle = "#95c4ee";
+        ctx.fillRect(0, 0, 500, 600);
+
+        ctx.fillStyle = "#905b1e";
+        ctx.fillRect(0, 400, 500, 200);
+
         ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(100, 100, 30, 0, 2* Math.PI); 
+        ctx.arc(125, 100, 30, 0, 2* Math.PI); 
+        ctx.arc(150, 100, 30, 0, 2* Math.PI); 
+        ctx.arc(125, 110, 30, 0, 2* Math.PI); 
+        ctx.arc(125, 93, 30, 0, 2* Math.PI); 
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(300, 100, 30, 0, 2* Math.PI); 
+        ctx.arc(325, 100, 30, 0, 2* Math.PI); 
+        ctx.arc(350, 100, 30, 0, 2* Math.PI); 
+        ctx.arc(325, 110, 30, 0, 2* Math.PI); 
+        ctx.arc(325, 93, 30, 0, 2* Math.PI); 
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(35, 35, 30, 0, 2* Math.PI); 
+        ctx.fillStyle = '#f0ff00';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.fillStyle = "#905b1e";
+        ctx.fillRect(400, 300, 50, 100);
+
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(400, 280, 30, 0, 2* Math.PI); 
+        ctx.arc(425, 280, 30, 0, 2* Math.PI); 
+        ctx.arc(450, 280, 30, 0, 2* Math.PI); 
+        ctx.arc(425, 290, 30, 0, 2* Math.PI); 
+        ctx.arc(425, 273, 30, 0, 2* Math.PI); 
+        ctx.arc(425, 313, 30, 0, 2* Math.PI); 
+        ctx.arc(405, 303, 30, 0, 2* Math.PI); 
+        ctx.arc(445, 303, 30, 0, 2* Math.PI); 
+        ctx.fillStyle = "#19b30f";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.fillStyle = "#fdbf1a";
+        ctx.fillRect(130, 300, 100, 100);
+
+        ctx.beginPath();
+        ctx.moveTo(130, 300); 
+        ctx.lineTo(180, 250); 
+        ctx.lineTo(230, 300); 
+        ctx.closePath();
+        ctx.fillStyle = 'red';
+        ctx.fill(); 
+
+
+        ctx.fillStyle = "#baa15c";
+        ctx.fillRect(165, 350, 30, 50);
+
+        ctx.fillStyle = "#fdbf1a";
+        ctx.fillRect(30, 320, 100, 80);
+
+        ctx.fillStyle = "#e1f1ef";
+        ctx.fillRect(48, 350, 70, 50);
+
+        ctx.translate(x * 1.5, 0); 
+        ctx.scale(-1, 1); 
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI, true); 
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(620, 390, 10, 0, 2* Math.PI); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(580, 390, 10, 0, 2* Math.PI); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
+        /* ctx.closePath();
         ctx.beginPath();
         ctx.arc(200, 200, 50, 0, 2* Math.PI); 
         ctx.fillStyle = '#ffb1a0';
@@ -94,7 +180,7 @@
         ctx.arc(400, 220, 25, 0, 1* Math.PI); 
         ctx.fillStyle = 'black';
         ctx.fill();
-        ctx.closePath();
+        ctx.closePath(); */
 
         /*  var super_X = 100;
          var super_y = 100;
