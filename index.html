@@ -9,134 +9,191 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <canvas id="myCanvas" width="500" height="600"></canvas>
     <SCRipt type="text/javascript">
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
+        const x = 400;
+        const y = 180;
+        const radius = 50;
+        /* ctx.fillStyle = "green";
+        ctx.fillRect(20, 20, 100, 100)
+        ctx.fillStyle = "blue";
+        ctx.fillRect(100, 100, 100, 100)
+        ctx.fillStyle = "red";
+        ctx.fillRect(180, 180, 100, 100)
+        ctx.fillStyle = "black";
+        ctx.fillRect(280, 180, 100, 100) */
 
-        var super_X = 100;
-        var super_y = 100;
-        var direccion = '';
-        var speed = 10;
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
+        
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(200, 200, 50, 0, 2* Math.PI); 
+        ctx.fillStyle = '#ffb1a0';
+        ctx.fill();
+        ctx.closePath();
+        
+        ctx.translate(x * 1.5, 0); 
+        ctx.scale(-1, 1); 
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI, true); 
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.closePath(); 
 
-            }
-            return color;
-        }
+        ctx.fillStyle = "#679dcd";
+        ctx.fillRect(350, 350, 100, 100)
 
-        document.addEventListener("keydown", event => {
+        ctx.fillStyle = "red";
+        ctx.fillRect(350, 270, 100, 100)
 
+        ctx.fillStyle = "#ffb1a0";
+        ctx.fillRect(385, 220, 30, 50)
 
-            if (event.key.startsWith("Arrow")) {
-                event.preventDefault();
+        ctx.fillStyle = "#679dcd";
+        ctx.fillRect(350, 450, 30, 100)
 
-                switch (event.key) {
-                    case "ArrowUp":
-                        direccion = 'up';
-                        break;
-                    case "ArrowDown":
-                        direccion = 'down';
-                        break;
-                    case "ArrowLeft":
-                        direccion = 'left';
+        ctx.fillStyle = "#679dcd";
+        ctx.fillRect(420, 450, 30, 100)
 
-                        break;
-                    case "ArrowRight":
-                        direccion = 'right';
+        ctx.fillStyle = "black";
+        ctx.fillRect(320, 525, 60, 25)
 
-                        break;
-                }
+        ctx.fillStyle = "black";
+        ctx.fillRect(420, 525, 60, 25)
 
+        ctx.fillStyle = "red";
+        ctx.fillRect(420, 270, 60, 35)
+        
+        ctx.fillStyle = "red";
+        ctx.fillRect(318, 270, 60, 35)
 
-            }
-            if (event.key === 'p') {
-                speed += 5;
-            }
-            //pintar();
-        })
-
-
-
-        function movimiento() {
-            switch (direccion) {
-                case 'up':
-                    super_y -= speed;
-                    break;
-                case 'down':
-                    super_y += speed;
-
-                    break;
-                case 'right':
-                    super_X += speed;
-
-                    break;
-                case 'left':
-                    super_X -= speed;
-
-                    break;
-
-            }
-            if (super_X > canvas.width) {
-                super_X = 0;
-            } else if (super_X < 0) {
-                super_X = canvas.width - 30;
-            }
-
-            if (super_y > canvas.height) {
-                super_y = 0;
-            } else if (super_y < 0) {
-                super_y = canvas.height - 30;
-            }
-        }
-
-        function pintar() {
+        ctx.fillStyle = "#ffb1a0";
+        ctx.fillRect(228, 270, 90, 35)
 
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = getRandomColor();
-            ctx.strokeStyle = getRandomColor();
-            ctx.fillRect(super_X, super_y, 30, 30);
-            ctx.strokeRect(super_X, super_y, 30, 30)
-            ctx.stroke();
-            ctx.fill();
+        ctx.fillStyle = "#ffb1a0";
+        ctx.fillRect(480, 270, 90, 35)
 
-            ctx.font = "30px Georgia";
-            ctx.fillText("velocidad: " + speed, 300, 50);
+        
+        
+        ctx.beginPath();
+        ctx.arc(418, 200, 10, 0, 2* Math.PI); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
 
-            movimiento()
-            requestAnimationFrame(pintar);
-        }
-        requestAnimationFrame(pintar);
-
-
-
+        ctx.beginPath();
+        ctx.arc(380, 200, 10, 0, 2* Math.PI); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
 
 
+        ctx.beginPath();
+        ctx.arc(400, 220, 25, 0, 1* Math.PI); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        /*  var super_X = 100;
+         var super_y = 100;
+         var direccion = '';
+         var speed = 10;
+         function getRandomColor() {
+             var letters = '0123456789ABCDEF';
+             var color = '#';
+             for (var i = 0; i < 6; i++) {
+                 color += letters[Math.floor(Math.random() * 16)];
+ 
+             }
+             return color;
+         }
+ 
+         document.addEventListener("keydown", event => {
+ 
+ 
+             if (event.key.startsWith("Arrow")) {
+                 event.preventDefault();
+ 
+                 switch (event.key) {
+                     case "ArrowUp":
+                         direccion = 'up';
+                         break;
+                     case "ArrowDown":
+                         direccion = 'down';
+                         break;
+                     case "ArrowLeft":
+                         direccion = 'left';
+ 
+                         break;
+                     case "ArrowRight":
+                         direccion = 'right';
+ 
+                         break;
+                 }
+ 
+ 
+             }
+             if (event.key === 'p') {
+                 speed += 5;
+             }
+             //pintar();
+         })
+ 
+ 
+ 
+         function movimiento() {
+             switch (direccion) {
+                 case 'up':
+                     super_y -= speed;
+                     break;
+                 case 'down':
+                     super_y += speed;
+ 
+                     break;
+                 case 'right':
+                     super_X += speed;
+ 
+                     break;
+                 case 'left':
+                     super_X -= speed;
+ 
+                     break;
+ 
+             }
+             if (super_X > canvas.width) {
+                 super_X = 0;
+             } else if (super_X < 0) {
+                 super_X = canvas.width - 30;
+             }
+ 
+             if (super_y > canvas.height) {
+                 super_y = 0;
+             } else if (super_y < 0) {
+                 super_y = canvas.height - 30;
+             }
+         }
+ 
+         function pintar() {
+ 
+ 
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+             ctx.fillStyle = getRandomColor();
+             ctx.strokeStyle = getRandomColor();
+             ctx.fillRect(super_X, super_y, 30, 30);
+             ctx.strokeRect(super_X, super_y, 30, 30)
+             ctx.stroke();
+             ctx.fill();
+ 
+             ctx.font = "30px Georgia";
+             ctx.fillText("velocidad: " + speed, 300, 50);
+ 
+             movimiento()
+             requestAnimationFrame(pintar);
+         }
+         requestAnimationFrame(pintar);
+  */
 
 
         /*         let figura = 1;
