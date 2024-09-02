@@ -9,475 +9,241 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="500" height="600"></canvas>
+    <canvas id="myCanvas" width="658" height="600"></canvas>
     <SCRipt type="text/javascript">
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
-        const x = 600;
-        const y = 390;
-        const radius = 40;
+        
         
 
-        ctx.fillStyle = "#95c4ee";
-        ctx.fillRect(0, 0, 500, 600);
+        ctx.fillStyle = "#A2F0FF";
+        ctx.fillRect(0, 0, 658, 600);
 
-        ctx.fillStyle = "#905b1e";
-        ctx.fillRect(0, 400, 500, 200);
-
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(100, 100, 30, 0, 2* Math.PI); 
-        ctx.arc(125, 100, 30, 0, 2* Math.PI); 
-        ctx.arc(150, 100, 30, 0, 2* Math.PI); 
-        ctx.arc(125, 110, 30, 0, 2* Math.PI); 
-        ctx.arc(125, 93, 30, 0, 2* Math.PI); 
-        ctx.fillStyle = 'white';
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(300, 100, 30, 0, 2* Math.PI); 
-        ctx.arc(325, 100, 30, 0, 2* Math.PI); 
-        ctx.arc(350, 100, 30, 0, 2* Math.PI); 
-        ctx.arc(325, 110, 30, 0, 2* Math.PI); 
-        ctx.arc(325, 93, 30, 0, 2* Math.PI); 
-        ctx.fillStyle = 'white';
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(35, 35, 30, 0, 2* Math.PI); 
-        ctx.fillStyle = '#f0ff00';
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.fillStyle = "#905b1e";
-        ctx.fillRect(400, 300, 50, 100);
-
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(400, 280, 30, 0, 2* Math.PI); 
-        ctx.arc(425, 280, 30, 0, 2* Math.PI); 
-        ctx.arc(450, 280, 30, 0, 2* Math.PI); 
-        ctx.arc(425, 290, 30, 0, 2* Math.PI); 
-        ctx.arc(425, 273, 30, 0, 2* Math.PI); 
-        ctx.arc(425, 313, 30, 0, 2* Math.PI); 
-        ctx.arc(405, 303, 30, 0, 2* Math.PI); 
-        ctx.arc(445, 303, 30, 0, 2* Math.PI); 
-        ctx.fillStyle = "#19b30f";
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.fillStyle = "#fdbf1a";
-        ctx.fillRect(130, 300, 100, 100);
-
-        ctx.beginPath();
-        ctx.moveTo(130, 300); 
-        ctx.lineTo(180, 250); 
-        ctx.lineTo(230, 300); 
-        ctx.closePath();
-        ctx.fillStyle = 'red';
-        ctx.fill(); 
+        ctx.fillStyle = "#218304";
+        ctx.fillRect(500, 230, 120, 180)
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "black"; 
+        ctx.strokeRect(500, 233, 120, 180);
 
 
-        ctx.fillStyle = "#baa15c";
-        ctx.fillRect(165, 350, 30, 50);
+        ctx.fillStyle = "#FF8954";
+        ctx.fillRect(20, 10, 70, 70)
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "black"; 
+        ctx.strokeRect(20, 10, 70, 70);
 
-        ctx.fillStyle = "#fdbf1a";
-        ctx.fillRect(30, 320, 100, 80);
+        ctx.fillStyle = "#FF8954";
+        ctx.fillRect(94.5, 10, 70, 70)
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "black"; 
+        ctx.strokeRect(94.5, 10, 70, 70);
 
-        ctx.fillStyle = "#e1f1ef";
-        ctx.fillRect(48, 350, 70, 50);
+        ctx.fillStyle = "#218304";
+        ctx.fillRect(480, 170, 160, 60)
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "black"; 
+        ctx.strokeRect(480, 170, 160, 60);
 
-        ctx.translate(x * 1.5, 0); 
-        ctx.scale(-1, 1); 
-        ctx.beginPath();
-        ctx.arc(x, y, radius, 0, Math.PI, true); 
-        ctx.fillStyle = 'red';
-        ctx.fill();
-        ctx.closePath();
+        ctx.fillStyle = "#71C2FF";
+        ctx.fillRect(290, 130, 160, 295)
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "black"; 
+        ctx.strokeRect(290, 130, 160, 295);
 
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(620, 390, 10, 0, 2* Math.PI); 
-        ctx.fillStyle = 'black';
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(580, 390, 10, 0, 2* Math.PI); 
-        ctx.fillStyle = 'black';
-        ctx.fill();
-        ctx.closePath();
-        /* ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(200, 200, 50, 0, 2* Math.PI); 
-        ctx.fillStyle = '#ffb1a0';
-        ctx.fill();
-        ctx.closePath();
-        
-        ctx.translate(x * 1.5, 0); 
-        ctx.scale(-1, 1); 
-        ctx.beginPath();
-        ctx.arc(x, y, radius, 0, Math.PI, true); 
-        ctx.fillStyle = 'red';
-        ctx.fill();
-        ctx.closePath(); 
-
-        ctx.fillStyle = "#679dcd";
-        ctx.fillRect(350, 350, 100, 100)
-
-        ctx.fillStyle = "red";
-        ctx.fillRect(350, 270, 100, 100)
-
-        ctx.fillStyle = "#ffb1a0";
-        ctx.fillRect(385, 220, 30, 50)
-
-        ctx.fillStyle = "#679dcd";
-        ctx.fillRect(350, 450, 30, 100)
-
-        ctx.fillStyle = "#679dcd";
-        ctx.fillRect(420, 450, 30, 100)
+        ctx.fillStyle = "#FFC0B5";
+        ctx.fillRect(180, 170, 160, 245)
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "black"; 
+        ctx.strokeRect(180, 170, 160, 245);
 
         ctx.fillStyle = "black";
-        ctx.fillRect(320, 525, 60, 25)
+        ctx.fillRect(190, 200, 10, 10)
+        ctx.fillRect(200, 210, 10, 10)
+        ctx.fillRect(200, 190, 10, 10)
+        ctx.fillRect(210, 200, 10, 10)
+
 
         ctx.fillStyle = "black";
-        ctx.fillRect(420, 525, 60, 25)
-
-        ctx.fillStyle = "red";
-        ctx.fillRect(420, 270, 60, 35)
+        ctx.fillRect(190, 380, 10, 10)
+        ctx.fillRect(200, 370, 10, 10)
+        ctx.fillRect(200, 390, 10, 10)
+        ctx.fillRect(210, 380, 10, 10)
         
-        ctx.fillStyle = "red";
-        ctx.fillRect(318, 270, 60, 35)
+        ctx.fillStyle = "black";
+        ctx.fillRect(290, 380, 10, 10)
+        ctx.fillRect(300, 370, 10, 10)
+        ctx.fillRect(300, 390, 10, 10)
+        ctx.fillRect(310, 380, 10, 10)
 
-        ctx.fillStyle = "#ffb1a0";
-        ctx.fillRect(228, 270, 90, 35)
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(290, 200, 10, 10)
+        ctx.fillRect(300, 210, 10, 10)
+        ctx.fillRect(300, 190, 10, 10)
+        ctx.fillRect(310, 200, 10, 10)
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(290, 380, 10, 10)
+        ctx.fillRect(300, 370, 10, 10)
+        ctx.fillRect(300, 390, 10, 10)
+        ctx.fillRect(310, 380, 10, 10)
 
 
-        ctx.fillStyle = "#ffb1a0";
-        ctx.fillRect(480, 270, 90, 35)
-
+        ctx.fillStyle = "black";
+        ctx.fillRect(310, 140, 10, 10)
+        ctx.fillRect(300, 150, 10, 10)
+        ctx.fillRect(310, 160, 10, 10)
+        ctx.fillRect(320, 150, 10, 10)
         
+        ctx.fillStyle = "black";
+        ctx.fillRect(410, 140, 10, 10)
+        ctx.fillRect(400, 150, 10, 10)
+        ctx.fillRect(410, 160, 10, 10)
+        ctx.fillRect(420, 150, 10, 10)
+
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(410, 380, 10, 10)
+        ctx.fillRect(400, 390, 10, 10)
+        ctx.fillRect(410, 400, 10, 10)
+        ctx.fillRect(420, 390, 10, 10)
+
+        ctx.fillStyle = "#B16F3B";
+        ctx.fillRect(2.5, 437.5, 50, 50);
+        ctx.fillRect(59, 437.5, 50, 50); 
+        ctx.fillRect(111.5, 437.5, 50, 50);
+        ctx.fillRect(166.5, 437.5, 50, 50);
+        ctx.fillRect(221.5, 437.5, 50, 50);
+        ctx.fillRect(276.5, 437.5, 50, 50);
+        ctx.fillRect(331.5, 437.5, 50, 50);
+        ctx.fillRect(386.5, 437.5, 50, 50);
+        ctx.fillRect(441.5, 437.5, 50, 50);
+        ctx.fillRect(495.5, 437.5, 50, 50);
+        ctx.fillRect(550.5, 437.5, 50, 50);
+        ctx.fillRect(605.5, 437.5, 50, 50);
+
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "#633D20"; 
+        ctx.strokeRect(2.5, 437.5, 50, 50);
+        ctx.strokeRect(57, 437.5, 50, 50);
+        ctx.strokeRect(111.5, 437.5, 50, 50);
+        ctx.strokeRect(166.5, 437.5, 50, 50);
+        ctx.strokeRect(221.5, 437.5, 50, 50);
+        ctx.strokeRect(276.5, 437.5, 50, 50);
+        ctx.strokeRect(331.5, 437.5, 50, 50);
+        ctx.strokeRect(386.5, 437.5, 50, 50);
+        ctx.strokeRect(441.5, 437.5, 50, 50);
+        ctx.strokeRect(495.5, 437.5, 50, 50);
+        ctx.strokeRect(550.5, 437.5, 50, 50);
+        ctx.strokeRect(605.5, 437.5, 50, 50);
+
+ 
+ 
+        ctx.fillStyle = "#B16F3B";
+        ctx.fillRect(2.5, 492.5, 50, 50);
+        ctx.fillRect(59, 492.5, 50, 50); 
+        ctx.fillRect(111.5, 492.5, 50, 50);
+        ctx.fillRect(166.5, 492.5, 50, 50);
+        ctx.fillRect(221.5, 492.5, 50, 50);
+        ctx.fillRect(276.5, 492.5, 50, 50);
+        ctx.fillRect(331.5, 492.5, 50, 50);
+        ctx.fillRect(386.5, 492.5, 50, 50);
+        ctx.fillRect(441.5, 492.5, 50, 50);
+        ctx.fillRect(495.5, 492.5, 50, 50);
+        ctx.fillRect(550.5, 492.5, 50, 50);
+        ctx.fillRect(605.5, 492.5, 50, 50);
+
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "#633D20"; 
+        ctx.strokeRect(2.5, 492.5, 50, 50);
+        ctx.strokeRect(57, 492.5, 50, 50);
+        ctx.strokeRect(111.5, 492.5, 50, 50);
+        ctx.strokeRect(166.5, 492.5, 50, 50);
+        ctx.strokeRect(221.5, 492.5, 50, 50);
+        ctx.strokeRect(276.5, 492.5, 50, 50);
+        ctx.strokeRect(331.5, 492.5, 50, 50);
+        ctx.strokeRect(386.5, 492.5, 50, 50);
+        ctx.strokeRect(441.5, 492.5, 50, 50);
+        ctx.strokeRect(495.5, 492.5, 50, 50);
+        ctx.strokeRect(550.5, 492.5, 50, 50);
+        ctx.strokeRect(605.5, 492.5, 50, 50);
+
+
+
+
+
+        ctx.fillStyle = "#B16F3B";
+        ctx.fillRect(2.5, 547.5, 50, 50);
+        ctx.fillRect(59, 547.5, 50, 50); 
+        ctx.fillRect(111.5, 547.5, 50, 50);
+        ctx.fillRect(166.5, 547.5, 50, 50);
+        ctx.fillRect(221.5, 547.5, 50, 50);
+        ctx.fillRect(276.5, 547.5, 50, 50);
+        ctx.fillRect(331.5, 547.5, 50, 50);
+        ctx.fillRect(386.5, 547.5, 50, 50);
+        ctx.fillRect(441.5, 547.5, 50, 50);
+        ctx.fillRect(495.5, 547.5, 50, 50);
+        ctx.fillRect(550.5, 547.5, 50, 50);
+        ctx.fillRect(605.5, 547.5, 50, 50);
+
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "#633D20"; 
+        ctx.strokeRect(2.5, 547.5, 50, 50);
+        ctx.strokeRect(57, 547.5, 50, 50);
+        ctx.strokeRect(111.5, 547.5, 50, 50);
+        ctx.strokeRect(166.5, 547.5, 50, 50);
+        ctx.strokeRect(221.5, 547.5, 50, 50);
+        ctx.strokeRect(276.5, 547.5, 50, 50);
+        ctx.strokeRect(331.5, 547.5, 50, 50);
+        ctx.strokeRect(386.5, 547.5, 50, 50);
+        ctx.strokeRect(441.5, 547.5, 50, 50);
+        ctx.strokeRect(495.5, 547.5, 50, 50);
+        ctx.strokeRect(550.5, 547.5, 50, 50);
+        ctx.strokeRect(605.5, 547.5, 50, 50);
+
+
+
+        ctx.fillStyle = "#FC9559";
+        ctx.fillRect(0, 415, 658, 20);
         
+         
+        ctx.scale(-1, 1); 
         ctx.beginPath();
-        ctx.arc(418, 200, 10, 0, 2* Math.PI); 
-        ctx.fillStyle = 'black';
+        ctx.arc(-60, 400, 45, 0, Math.PI, true); 
+        ctx.fillStyle = '#218304';
+        ctx.lineWidth = 5;          
+        ctx.strokeStyle = 'black';  
+        ctx.stroke();               
         ctx.fill();
         ctx.closePath();
 
+         
+        ctx.scale(-1, 1); 
         ctx.beginPath();
-        ctx.arc(380, 200, 10, 0, 2* Math.PI); 
-        ctx.fillStyle = 'black';
+        ctx.arc(100, 415, 40, 0, Math.PI, true); 
+        ctx.fillStyle = '#218304';
+        ctx.lineWidth = 5;          
+        ctx.strokeStyle = 'black';  
+        ctx.stroke();               
         ctx.fill();
         ctx.closePath();
 
 
+
+       
+        ctx.scale(-1, 1); 
         ctx.beginPath();
-        ctx.arc(400, 220, 25, 0, 1* Math.PI); 
-        ctx.fillStyle = 'black';
+        ctx.arc(-20, 415, 40, 0, Math.PI, true); 
+        ctx.fillStyle = '#218304';
+        ctx.lineWidth = 5;          
+        ctx.strokeStyle = 'black';  
+        ctx.stroke();               
         ctx.fill();
-        ctx.closePath(); */
-
-        /*  var super_X = 100;
-         var super_y = 100;
-         var direccion = '';
-         var speed = 10;
-         function getRandomColor() {
-             var letters = '0123456789ABCDEF';
-             var color = '#';
-             for (var i = 0; i < 6; i++) {
-                 color += letters[Math.floor(Math.random() * 16)];
- 
-             }
-             return color;
-         }
- 
-         document.addEventListener("keydown", event => {
- 
- 
-             if (event.key.startsWith("Arrow")) {
-                 event.preventDefault();
- 
-                 switch (event.key) {
-                     case "ArrowUp":
-                         direccion = 'up';
-                         break;
-                     case "ArrowDown":
-                         direccion = 'down';
-                         break;
-                     case "ArrowLeft":
-                         direccion = 'left';
- 
-                         break;
-                     case "ArrowRight":
-                         direccion = 'right';
- 
-                         break;
-                 }
- 
- 
-             }
-             if (event.key === 'p') {
-                 speed += 5;
-             }
-             //pintar();
-         })
- 
- 
- 
-         function movimiento() {
-             switch (direccion) {
-                 case 'up':
-                     super_y -= speed;
-                     break;
-                 case 'down':
-                     super_y += speed;
- 
-                     break;
-                 case 'right':
-                     super_X += speed;
- 
-                     break;
-                 case 'left':
-                     super_X -= speed;
- 
-                     break;
- 
-             }
-             if (super_X > canvas.width) {
-                 super_X = 0;
-             } else if (super_X < 0) {
-                 super_X = canvas.width - 30;
-             }
- 
-             if (super_y > canvas.height) {
-                 super_y = 0;
-             } else if (super_y < 0) {
-                 super_y = canvas.height - 30;
-             }
-         }
- 
-         function pintar() {
- 
- 
-             ctx.clearRect(0, 0, canvas.width, canvas.height);
-             ctx.fillStyle = getRandomColor();
-             ctx.strokeStyle = getRandomColor();
-             ctx.fillRect(super_X, super_y, 30, 30);
-             ctx.strokeRect(super_X, super_y, 30, 30)
-             ctx.stroke();
-             ctx.fill();
- 
-             ctx.font = "30px Georgia";
-             ctx.fillText("velocidad: " + speed, 300, 50);
- 
-             movimiento()
-             requestAnimationFrame(pintar);
-         }
-         requestAnimationFrame(pintar);
-  */
+        ctx.closePath();
 
 
-        /*         let figura = 1;
         
-        
-                const canvas = document.getElementById("myCanvas");
-                const ctx = canvas.getContext("2d");
-                let isDrawing = false;
-                let x = 0;
-                let y = 0;
-        
-                canvas.addEventListener("mousemove", (e) => {
-                    if (isDrawing) {
-                        drawLine(ctx, x, y, e.offsetX, e.offsetY);
-                        x = e.offsetX;
-                        y = e.offsetY;
-                        
-                    }
-        
-                });
-        
-                canvas.addEventListener("mousedown", (e) => {
-                    x = e.offsetX;
-                    y = e.offsetY;
-                    isDrawing = true;
-                    ctx.fillStyle = getRandomColor();
-                        ctx.strokeStyle = getRandomColor();
-        
-                        if (figura == 1) {
-                            ctx.arc(e.offsetX, e.offsetY, 50, 0, 2 * Math.PI);
-                        } else if (figura == 2) {
-                            ctx.fillRect(e.offsetX - 50, e.offsetY - 50, 100, 100);
-                        }
-        
-                        ctx.stroke();
-                        ctx.fill();
-                });
-        
-                canvas.addEventListener("mouseup", (e) => {
-                    if (isDrawing) {
-                        drawLine(ctx, x, y, e.offsetX, e.offsetY);
-                        x = 0;
-                        y = 0;
-                        isDrawing = false;
-        
-                        
-                    }
-                });
-        
-                canvas.addEventListener("mouseout", (e) => {
-                    ctx.beginPath();
-                    if (figura == 1) {
-                        figura = 2;
-                    } else if (figura == 2) {
-                        figura = 1;
-                    }
-                })
-        
-                function drawLine(context, x1, y1, x2, y2) {
-                    context.beginPath();
-                    context.strokeStyle = "black";
-                    context.lineWidth = 1;
-                    context.moveTo(x1, y1);
-                    context.lineTo(x2, y2);
-                    context.stroke();
-                    context.closePath();
-                }
-        
-        
-        
-        
-        
-        
-        
-                function getRandomColor() {
-                    var letters = '0123456789ABCDEF';
-                    var color = '#';
-                    for (var i = 0; i < 6; i++) {
-                        color += letters[Math.floor(Math.random() * 16)];
-        
-                    }
-                    return color;
-                }
-         */
-
-
-
-
-        /*
-                document.getElementById("myCanvas").addEventListener("mouseover", (e) => {
-        
-        
-                    ctx.beginPath();
-                    ctx.fillStyle = getRandomColor();
-        
-                    ctx.strokeStyle = getRandomColor();
-        
-                    ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
-                    ctx.stroke();
-                    ctx.fill();
-                })
-         */
-
-        /*         document.getElementById("myCanvas").addEventListener("mousedown", (e) => {
-        
-        
-                    ctx.beginPath();
-                    ctx.fillStyle = getRandomColor();
-                    ctx.strokeStyle = getRandomColor();
-                    if (figura == 1) {
-                        ctx.arc(e.x, e.y, 50, 0, 2 * Math.PI);
-                    } else if (figura == 2) {
-                        ctx.fillRect(e.x-50, e.y-50, 100, 100)
-                    }
-        
-        
-                    ctx.stroke();
-                    ctx.fill();
-                })
-        
-                document.getElementById("myCanvas").addEventListener("mouseout", (e) => {
-                    if(figura==1){
-                        figura=2;
-                    }else if(figura==2){
-                        figura=1;
-                    }
-                })  */
-
-        /*   const canvas = document.getElementById("myCanvas");>
-             const ctx = canvas.getContext("2d");
-             ctx.fillStyle = "green";
-             ctx.fillRect(20, 20, 100, 100)
-             ctx.fillStyle = "blue";
-             ctx.fillRect(100, 100, 100, 100)
-             ctx.fillStyle = "red";
-             ctx.fillRect(180, 180, 100, 100)
-     
-     
-             ctx.beginPath();
-     
-             ctx.moveTo(300, 300);
-             ctx.lineTo(300, 100);
-             ctx.lineTo(200, 100);
-             ctx.closePath();
-             ctx.stroke();
-     
-     
-             ctx.strokeStyle = "#32dc65"
-             ctx.beginPath();
-             ctx.arc(100, 375, 50, 0, 2 * Math.PI);
-             ctx.stroke();
-     
-             ctx.beginPath();
-             ctx.arc(200, 375, 50, 0, 2 * Math.PI);
-             ctx.fill();
-     
-             ctx.strokeStyle = "#32dc65"
-             ctx.beginPath();
-             ctx.arc(100, 355, 50, 0.9, 0.7 * Math.PI);
-             ctx.fill();
-     
-     
-             ctx.font = "30px Georgia";
-             ctx.fillText("Hola mundo!", 300, 50);
-     
-             ctx.font = "30px Georgia";
-             ctx.strokeText("Hola mundo!", 300, 50);
-     
-     
-             var img = new Image()
-             img.src = "m.png";
-     
-             img.onload = function () {
-                 ctx.drawImage(img, 400, 200, 200, 200);
-             };
-     
-     
-             const grd = ctx.createLinearGradient(500, 350, 200, 500);
-             grd.addColorStop(0, "blue");
-             grd.addColorStop(1, "red");
-             ctx.fillStyle = grd;
-             ctx.fillRect(400, 400, 200, 100)
-     
-     
-             const grd2 = ctx.createRadialGradient(205, 150, 5, 190, 160, 200);
-             grd2.addColorStop(0, "blue");
-             grd2.addColorStop(1, "white");
-     
-             ctx.fillStyle = grd2;
-             ctx.fillRect(200, 100, 150, 100);
-     
-     
-             const grd3 = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-             grd3.addColorStop(0, "red");
-             grd3.addColorStop(1, "white");
-     
-             ctx.fillStyle = grd3;
-             ctx.fillRect(10, 10, 150, 100); */
+       
     </SCRipt>
 
 
