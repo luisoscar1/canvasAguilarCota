@@ -5,194 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
 </head>
 
 <body>
-    <canvas id="myCanvas" width="658" height="600"></canvas>
-    <SCRipt type="text/javascript">
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script type="text/javascript">
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
-        
-        
 
-        ctx.fillStyle = "#2000A0";
-        ctx.fillRect(0, 0, 658, 600);
+        var super_X = 100;
+        var super_y = 100;
+        var direccion = '';
 
-         
-        ctx.fillStyle = "#80E000";
-        ctx.fillRect(320, 195, 268, 20);
-        ctx.fillStyle = "#80E000";
-        ctx.fillRect(340, 165, 228, 20);
-         
-        ctx.fillStyle = "#80E000";
-        ctx.fillRect(360, 135, 190, 20);
+        class Rectangulo {
+            constructor(color, w, h, x, y) {
+                this.color = color;
+                this.w = w;
+                this.h = h;
+                this.x = x;
+                this.y = y;
+            }
+        }
 
-        ctx.fillStyle = "#80E000";
-        ctx.fillRect(380, 105, 150, 20);
+        function movimientoX() {
+            var numero = Math.floor(Math.random() * 500) + 1;
+            return numero;
+        }
 
-        ctx.fillStyle = "#804000";
-        ctx.fillRect(440, 215, 28, 250);
+        function movimientoY() {
+            var numero2 = Math.floor(Math.random() * 500) + 1;
+            return numero2;
+        }
 
-        
+        var player = new Rectangulo("red", 50, 50, 120, 120);
+        var colision = new Rectangulo("black", 10, 10, 20, 20);
+        var obstaculo = new Rectangulo("grey", 200, 50, 150, 420);
 
-        ctx.beginPath();
-        ctx.arc(350, 350, 50, 0, 2* Math.PI); 
-        ctx.fillStyle = '#2000A0';
-        ctx.lineWidth = 5;          
-        ctx.strokeStyle = '#F8F606';  
-        ctx.stroke();               
-        ctx.fill();
-        ctx.closePath();
+        document.addEventListener("keydown", event => {
+            if (event.key.startsWith("Arrow")) {
+                event.preventDefault();
 
-        ctx.beginPath();
-        ctx.arc(220, 350, 50, 0, 2* Math.PI); 
-        ctx.fillStyle = '#2000A0';
-        ctx.lineWidth = 5;          
-        ctx.strokeStyle = '#F8F606';  
-        ctx.stroke();               
-        ctx.fill();
-        ctx.closePath();
+                switch (event.key) {
+                    case "ArrowUp":
+                        direccion = 'up';
+                        break;
+                    case "ArrowDown":
+                        direccion = 'down';
+                        break;
+                    case "ArrowLeft":
+                        direccion = 'left';
+                        break;
+                    case "ArrowRight":
+                        direccion = 'right';
+                        break;
+                }
+            }
+        });
 
-        ctx.fillStyle = "#B16F3B";
-        ctx.fillRect(2.5, 437.5, 50, 50);
-        ctx.fillRect(59, 437.5, 50, 50); 
-        ctx.fillRect(111.5, 437.5, 50, 50);
-        ctx.fillRect(166.5, 437.5, 50, 50);
-        ctx.fillRect(221.5, 437.5, 50, 50);
-        ctx.fillRect(276.5, 437.5, 50, 50);
-        ctx.fillRect(331.5, 437.5, 50, 50);
-        ctx.fillRect(386.5, 437.5, 50, 50);
-        ctx.fillRect(441.5, 437.5, 50, 50);
-        ctx.fillRect(495.5, 437.5, 50, 50);
-        ctx.fillRect(550.5, 437.5, 50, 50);
-        ctx.fillRect(605.5, 437.5, 50, 50);
+        function chocar() {
+            var n = movimientoX();
+            var x = movimientoY();
+            if (player.x < colision.x + 10 && player.x + 50 > colision.x && player.y < colision.y + 10 && player.y + 50 > colision.y) {
+                colision.x = n;
+                colision.y = x;
+            }
+        }
 
-        ctx.lineWidth = 5; 
-        ctx.strokeStyle = "#633D20"; 
-        ctx.strokeRect(2.5, 437.5, 50, 50);
-        ctx.strokeRect(57, 437.5, 50, 50);
-        ctx.strokeRect(111.5, 437.5, 50, 50);
-        ctx.strokeRect(166.5, 437.5, 50, 50);
-        ctx.strokeRect(221.5, 437.5, 50, 50);
-        ctx.strokeRect(276.5, 437.5, 50, 50);
-        ctx.strokeRect(331.5, 437.5, 50, 50);
-        ctx.strokeRect(386.5, 437.5, 50, 50);
-        ctx.strokeRect(441.5, 437.5, 50, 50);
-        ctx.strokeRect(495.5, 437.5, 50, 50);
-        ctx.strokeRect(550.5, 437.5, 50, 50);
-        ctx.strokeRect(605.5, 437.5, 50, 50);
+        function detectarColisionConObstaculo() {
+            if (player.x < obstaculo.x + obstaculo.w &&
+                player.x + player.w > obstaculo.x &&
+                player.y < obstaculo.y + obstaculo.h &&
+                player.y + player.h > obstaculo.y) {
+                return true;
+            }
+            return false;
+        }
 
- 
- 
-        ctx.fillStyle = "#B16F3B";
-        ctx.fillRect(2.5, 492.5, 50, 50);
-        ctx.fillRect(59, 492.5, 50, 50); 
-        ctx.fillRect(111.5, 492.5, 50, 50);
-        ctx.fillRect(166.5, 492.5, 50, 50);
-        ctx.fillRect(221.5, 492.5, 50, 50);
-        ctx.fillRect(276.5, 492.5, 50, 50);
-        ctx.fillRect(331.5, 492.5, 50, 50);
-        ctx.fillRect(386.5, 492.5, 50, 50);
-        ctx.fillRect(441.5, 492.5, 50, 50);
-        ctx.fillRect(495.5, 492.5, 50, 50);
-        ctx.fillRect(550.5, 492.5, 50, 50);
-        ctx.fillRect(605.5, 492.5, 50, 50);
+        function movimiento() {
+            let posicionAnterior = { x: player.x, y: player.y };
 
-        ctx.lineWidth = 5; 
-        ctx.strokeStyle = "#633D20"; 
-        ctx.strokeRect(2.5, 492.5, 50, 50);
-        ctx.strokeRect(57, 492.5, 50, 50);
-        ctx.strokeRect(111.5, 492.5, 50, 50);
-        ctx.strokeRect(166.5, 492.5, 50, 50);
-        ctx.strokeRect(221.5, 492.5, 50, 50);
-        ctx.strokeRect(276.5, 492.5, 50, 50);
-        ctx.strokeRect(331.5, 492.5, 50, 50);
-        ctx.strokeRect(386.5, 492.5, 50, 50);
-        ctx.strokeRect(441.5, 492.5, 50, 50);
-        ctx.strokeRect(495.5, 492.5, 50, 50);
-        ctx.strokeRect(550.5, 492.5, 50, 50);
-        ctx.strokeRect(605.5, 492.5, 50, 50);
+            switch (direccion) {
+                case 'up':
+                    player.y -= 8;
+                    break;
+                case 'down':
+                    player.y += 8;
+                    break;
+                case 'right':
+                    player.x += 8;
+                    break;
+                case 'left':
+                    player.x -= 8;
+                    break;
+            }
 
+            if (detectarColisionConObstaculo()) {
+                player.x = posicionAnterior.x;
+                player.y = posicionAnterior.y;
+            }
 
+            if (player.x > canvas.width) {
+                player.x = 0;
+            } else if (player.x < 0) {
+                player.x = canvas.width - 30;
+            }
 
+            if (player.y > canvas.height) {
+                player.y = 0;
+            } else if (player.y < 0) {
+                player.y = canvas.height - 30;
+            }
 
+            if (colision.x > canvas.width) {
+                colision.x = 0;
+            } else if (colision.x < 0) {
+                colision.x = canvas.width - 30;
+            }
 
-        ctx.fillStyle = "#B16F3B";
-        ctx.fillRect(2.5, 547.5, 50, 50);
-        ctx.fillRect(59, 547.5, 50, 50); 
-        ctx.fillRect(111.5, 547.5, 50, 50);
-        ctx.fillRect(166.5, 547.5, 50, 50);
-        ctx.fillRect(221.5, 547.5, 50, 50);
-        ctx.fillRect(276.5, 547.5, 50, 50);
-        ctx.fillRect(331.5, 547.5, 50, 50);
-        ctx.fillRect(386.5, 547.5, 50, 50);
-        ctx.fillRect(441.5, 547.5, 50, 50);
-        ctx.fillRect(495.5, 547.5, 50, 50);
-        ctx.fillRect(550.5, 547.5, 50, 50);
-        ctx.fillRect(605.5, 547.5, 50, 50);
+            if (colision.y > canvas.height) {
+                colision.y = 0;
+            } else if (colision.y < 0) {
+                colision.y = canvas.height - 30;
+            }
+        }
 
-        ctx.lineWidth = 5; 
-        ctx.strokeStyle = "#633D20"; 
-        ctx.strokeRect(2.5, 547.5, 50, 50);
-        ctx.strokeRect(57, 547.5, 50, 50);
-        ctx.strokeRect(111.5, 547.5, 50, 50);
-        ctx.strokeRect(166.5, 547.5, 50, 50);
-        ctx.strokeRect(221.5, 547.5, 50, 50);
-        ctx.strokeRect(276.5, 547.5, 50, 50);
-        ctx.strokeRect(331.5, 547.5, 50, 50);
-        ctx.strokeRect(386.5, 547.5, 50, 50);
-        ctx.strokeRect(441.5, 547.5, 50, 50);
-        ctx.strokeRect(495.5, 547.5, 50, 50);
-        ctx.strokeRect(550.5, 547.5, 50, 50);
-        ctx.strokeRect(605.5, 547.5, 50, 50);
+        function pintar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+            ctx.fillStyle = player.color;
+            ctx.fillRect(player.x, player.y, player.w, player.h);
 
+            ctx.fillStyle = colision.color;
+            ctx.fillRect(colision.x, colision.y, colision.w, colision.h);
 
-        ctx.fillStyle = "#80E000";
-        ctx.fillRect(0, 415, 658, 20);
-        
-         
-        ctx.scale(-1, 1); 
-        ctx.beginPath();
-        ctx.arc(-60, 400, 45, 0, Math.PI, true); 
-        ctx.fillStyle = '#218304';
-        ctx.lineWidth = 5;          
-        ctx.strokeStyle = 'black';  
-        ctx.stroke();               
-        ctx.fill();
-        ctx.closePath();
+            ctx.fillStyle = obstaculo.color;
+            ctx.fillRect(obstaculo.x, obstaculo.y, obstaculo.w, obstaculo.h);
 
-         
-        ctx.scale(-1, 1); 
-        ctx.beginPath();
-        ctx.arc(100, 415, 40, 0, Math.PI, true); 
-        ctx.fillStyle = '#218304';
-        ctx.lineWidth = 5;          
-        ctx.strokeStyle = 'black';  
-        ctx.stroke();               
-        ctx.fill();
-        ctx.closePath();
+            chocar();
+            movimiento();
+            requestAnimationFrame(pintar);
+        }
 
-
-
-       
-        ctx.scale(-1, 1); 
-        ctx.beginPath();
-        ctx.arc(-20, 415, 40, 0, Math.PI, true); 
-        ctx.fillStyle = '#218304';
-        ctx.lineWidth = 5;          
-        ctx.strokeStyle = 'black';  
-        ctx.stroke();               
-        ctx.fill();
-        ctx.closePath();
-
-
-        
-       
-    </SCRipt>
-
-
+        requestAnimationFrame(pintar);
+    </script>
 </body>
 
 </html>
