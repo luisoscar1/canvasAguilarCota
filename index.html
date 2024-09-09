@@ -32,6 +32,9 @@ profe utilize su coddigo para no complicarme
         var muros = [];
         var pause = true;
         var puntaje = 0;
+        var playerImage = new Image();
+        playerImage.src = 'de frente.png';
+        const audio = new Audio("mario.mp3");
         class Rectangulo {
 
             constructor(color, w, h, x, y, speed) {
@@ -60,7 +63,7 @@ profe utilize su coddigo para no complicarme
 
         }
 
-        var player = new Rectangulo("red", 30, 30, 100, 100, 5);
+        var player = new Rectangulo("white", 30, 30, 100, 100, 5);
 
         var target = new Rectangulo("black", 10, 10, 200, 200, null);
 
@@ -129,6 +132,7 @@ profe utilize su coddigo para no complicarme
                         break;
                 }
                 if (player.colision(target)) {
+                    audio.play();
 
                     target.x = Math.floor(Math.random() * 500)
                     target.y = Math.floor(Math.random() * 500)
@@ -182,16 +186,15 @@ profe utilize su coddigo para no complicarme
             ctx.fillStyle = "black";
             ctx.fillText("puntaje: " + puntaje, 510, 30)
 
-            //player o jugador
+
             ctx.fillStyle = player.color;
             ctx.fillRect(player.x, player.y, player.w, player.h)
 
-            //target
+            ctx.drawImage(playerImage, player.x, player.y, player.w, player.h);
             ctx.fillStyle = target.color;
             ctx.fillRect(target.x, target.y, target.w, target.h)
 
-            //wall
-
+        
             muros.forEach(function (muros, i, array) {
                 ctx.fillStyle = muros.color;
                 ctx.fillRect(muros.x, muros.y, muros.w, muros.h)
